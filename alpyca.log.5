@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2026-05-31T11:58:09.458 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
 2026-05-31T11:59:26.147 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60388)
 2026-05-31T11:59:26.149 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60387)
@@ -516,3 +517,78 @@ ASCOM Initiative
 2026-05-31T12:06:36.495 INFO 192.168.1.120 <- False
 2026-05-31T12:06:36.497 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=210
 2026-05-31T12:06:36.497 INFO 192.168.1.120 <- False
+=======
+2026-03-29T15:14:33.075 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
+2026-03-29T15:14:35.983 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/connected
+2026-03-29T15:14:35.983 INFO 192.168.1.77 -> {'Connected': 'True', 'ClientID': '40690', 'ClientTransactionID': '20'}
+2026-03-29T15:14:40.197 ERROR DriverException: Filterwheel.Connected failed
+Traceback (most recent call last):
+  File "C:\Users\thbru\Documents\Astronomie\Programme_Roue_Filtre_Focusser\FilterWheelFocusserAlpyca\filterwheel.py", line 115, in on_put
+    fw.connect()
+  File "C:\Users\thbru\Documents\Astronomie\Programme_Roue_Filtre_Focusser\FilterWheelFocusserAlpyca\filterwheel_device.py", line 78, in connect
+    self.set_position(0)
+  File "C:\Users\thbru\Documents\Astronomie\Programme_Roue_Filtre_Focusser\FilterWheelFocusserAlpyca\filterwheel_device.py", line 147, in set_position
+    raise Exception(f"Filter wheel error: {move}")
+Exception: Filter wheel error: ERR 103 PID did not converge
+
+2026-03-29T15:14:49.777 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/connected
+2026-03-29T15:14:49.778 INFO 192.168.1.77 -> {'Connected': 'True', 'ClientID': '63474', 'ClientTransactionID': '21'}
+2026-03-29T15:14:49.782 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/connected?ClientID=63474&ClientTransactionID=22
+2026-03-29T15:14:49.782 INFO 192.168.1.77 <- True
+2026-03-29T15:14:49.784 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/names?ClientID=63474&ClientTransactionID=23
+2026-03-29T15:14:49.784 INFO 192.168.1.77 <- ['Luminance', 'Red', 'Green', 'Blue', 'None', 'None', 'None', 'Test4']
+2026-03-29T15:14:49.787 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/description?ClientID=63474&ClientTransactionID=24
+2026-03-29T15:14:49.787 INFO 192.168.1.77 <- Thibault ASCOM Filterwheel
+2026-03-29T15:14:49.789 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverinfo?ClientID=63474&ClientTransactionID=25
+2026-03-29T15:14:49.789 INFO 192.168.1.77 <- Alpaca Sample Device
+Implements IFilterwheel
+ASCOM Initiative
+2026-03-29T15:14:49.792 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverversion?ClientID=63474&ClientTransactionID=26
+2026-03-29T15:14:49.792 INFO 192.168.1.77 <- ##DRIVER VERSION AS STRING##
+2026-03-29T15:14:49.793 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/supportedactions?ClientID=63474&ClientTransactionID=27
+2026-03-29T15:14:49.794 INFO 192.168.1.77 <- []
+2026-03-29T15:14:49.796 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=28
+2026-03-29T15:14:49.797 INFO 192.168.1.77 <- 0
+2026-03-29T15:14:49.798 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverversion?ClientID=63474&ClientTransactionID=29
+2026-03-29T15:14:49.799 INFO 192.168.1.77 <- ##DRIVER VERSION AS STRING##
+2026-03-29T15:14:49.825 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/description?ClientID=63474&ClientTransactionID=30
+2026-03-29T15:14:49.825 INFO 192.168.1.77 <- Thibault ASCOM Filterwheel
+2026-03-29T15:14:49.827 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverinfo?ClientID=63474&ClientTransactionID=31
+2026-03-29T15:14:49.827 INFO 192.168.1.77 <- Alpaca Sample Device
+Implements IFilterwheel
+ASCOM Initiative
+2026-03-29T15:14:49.828 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverversion?ClientID=63474&ClientTransactionID=32
+2026-03-29T15:14:49.829 INFO 192.168.1.77 <- ##DRIVER VERSION AS STRING##
+2026-03-29T15:14:54.101 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/connected?ClientID=63474&ClientTransactionID=33
+2026-03-29T15:14:54.102 INFO 192.168.1.77 <- True
+2026-03-29T15:14:54.105 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=34
+2026-03-29T15:14:54.106 INFO 192.168.1.77 <- 0
+2026-03-29T15:14:54.108 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/position
+2026-03-29T15:14:54.109 INFO 192.168.1.77 -> {'Position': '1', 'ClientID': '63474', 'ClientTransactionID': '35'}
+2026-03-29T15:14:55.991 ERROR DriverException: Filterwheel.Position failed
+Traceback (most recent call last):
+  File "C:\Users\thbru\Documents\Astronomie\Programme_Roue_Filtre_Focusser\FilterWheelFocusserAlpyca\filterwheel.py", line 302, in on_put
+    fw.set_position(position)
+  File "C:\Users\thbru\Documents\Astronomie\Programme_Roue_Filtre_Focusser\FilterWheelFocusserAlpyca\filterwheel_device.py", line 147, in set_position
+    raise Exception(f"Filter wheel error: {move}")
+Exception: Filter wheel error: ERR 103 PID did not converge
+
+2026-03-29T15:14:56.502 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=36
+2026-03-29T15:14:56.503 INFO 192.168.1.77 <- 0
+2026-03-29T15:15:01.632 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/connected?ClientID=63474&ClientTransactionID=37
+2026-03-29T15:15:01.632 INFO 192.168.1.77 <- True
+2026-03-29T15:15:01.635 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=38
+2026-03-29T15:15:01.635 INFO 192.168.1.77 <- 0
+2026-03-29T15:15:01.638 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/position
+2026-03-29T15:15:01.639 INFO 192.168.1.77 -> {'Position': '1', 'ClientID': '63474', 'ClientTransactionID': '39'}
+2026-03-29T15:15:03.272 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=40
+2026-03-29T15:15:03.273 INFO 192.168.1.77 <- 1
+2026-03-29T15:15:06.281 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/connected?ClientID=63474&ClientTransactionID=41
+2026-03-29T15:15:06.281 INFO 192.168.1.77 <- True
+2026-03-29T15:15:06.284 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=42
+2026-03-29T15:15:06.284 INFO 192.168.1.77 <- 1
+2026-03-29T15:15:06.936 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=63474&ClientTransactionID=43
+2026-03-29T15:15:06.936 INFO 192.168.1.77 <- 1
+2026-03-29T15:15:22.386 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/connected
+2026-03-29T15:15:22.386 INFO 192.168.1.77 -> {'Connected': 'False', 'ClientID': '63474', 'ClientTransactionID': '44'}
+>>>>>>> Stashed changes

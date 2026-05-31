@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2026-05-31T12:32:52.531 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
 2026-05-31T12:32:57.225 INFO 192.168.1.120 -> PUT /api/v1/filterwheel/0/connected
 2026-05-31T12:32:57.225 INFO 192.168.1.120 -> {'Connected': 'True', 'ClientID': '11143', 'ClientTransactionID': '38'}
@@ -359,3 +360,6 @@ ASCOM Initiative
 2026-05-31T12:33:57.257 INFO 192.168.1.120 -> {'Connected': 'False', 'ClientID': '43827', 'ClientTransactionID': '212'}
 2026-05-31T12:34:00.571 INFO 192.168.1.120 -> PUT /api/v1/filterwheel/0/connected
 2026-05-31T12:34:00.571 INFO 192.168.1.120 -> {'Connected': 'False', 'ClientID': '11143', 'ClientTransactionID': '213'}
+=======
+2026-05-31T11:55:09.227 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
+>>>>>>> Stashed changes
