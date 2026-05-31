@@ -5,6 +5,7 @@ Created on Tue Oct 28 20:46:10 2025
 @author: thbru
 """
 import json
+from pathlib import Path
 import time
 
 from device_com import DeviceCOM
@@ -46,7 +47,9 @@ class FilterWheel:
         self.connecting = True
         
         try:
-            with open("filterwheel_parameters.json", "r", encoding="utf-8") as f:
+            config_path = Path(__file__).parent / "filterwheel_parameters.json" # Todo modifié ici
+            
+            with open(config_path, encoding="utf-8") as f:
                 params = json.load(f)
                 self.fw.port = params.get("port", self.fw.port)
                 self.fw.baudrate = params.get("baudrate", self.fw.baudrate)

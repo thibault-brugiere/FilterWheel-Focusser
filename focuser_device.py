@@ -5,6 +5,7 @@ Created on Tue Oct 28 20:46:10 2025
 @author: thbru
 """
 import json
+from pathlib import Path
 import time
 
 from device_com import DeviceCOM
@@ -48,7 +49,9 @@ class Focuser:
         self.connecting = True
         
         try:
-            with open("filterwheel_parameters.json", "r", encoding="utf-8") as f:
+            config_path = Path(__file__).parent / "filterwheel_parameters.json" # Todo modifié ici
+            
+            with open(config_path, encoding="utf-8") as f:
                 params = json.load(f)
                 self.foc.port = params.get("port_foc", self.foc.port)
                 self.step_size = params.get("step_size")
@@ -90,9 +93,11 @@ class Focuser:
         return self.connecting
     
     def isMoving(self):
+        time.sleep(0.05)
         return self.moving
 
     def get_position(self):
+        time.sleep(0.05)
         if not self.connected:
             raise Exception("Filter wheel not connected")
         return int(self.currentPosition)

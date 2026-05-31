@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['app.py', 'setup.py', 'filterwheel.py', 'filterwheel_device.py', 'device_com.py', 'filterwheel_parameters.json']
+recent_files = ['app.py', 'setup.py', 'filterwheel.py', 'filterwheel_device.py', 'device_com.py', 'filterwheel_parameters.json', '..\\..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\toml\\decoder.py', 'config.py', 'focuser.py', 'focuser_device.py']
 
 [main]
 version = 0.2.0

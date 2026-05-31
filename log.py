@@ -39,6 +39,7 @@
 
 import logging
 import logging.handlers
+from pathlib import Path
 import time
 from config import Config
 
@@ -76,7 +77,10 @@ def init_logging():
     formatter.converter = time.gmtime           # UTC time
     logger.handlers[0].setFormatter(formatter)  # This is the stdout handler, level set above
     # Add a logfile handler, same formatter and level
-    handler = logging.handlers.RotatingFileHandler('alpyca.log',
+    
+    log_path = Path(__file__).resolve().parent / "alpyca.log"
+    
+    handler = logging.handlers.RotatingFileHandler(log_path,
                                                     mode='w',
                                                     delay=True,     # Prevent creation of empty logs
                                                     maxBytes=Config.max_size_mb * 1000000,

@@ -42,13 +42,18 @@
 # 20-Ferb-2024  rbd 0.7 Add sync_write_connected to control sync/async
 #               write-Connected behavior.
 #
+from pathlib import Path
 import sys
 import toml
 import logging
 
+base_dir = Path(__file__).parent
+config_file = base_dir / "config.toml"
+
 _dict = {}
 # _dict = toml.load(f'{sys.path[0]}/config.toml')    # Errors here are fatal.
-_dict = toml.load(f'C:/Users/thbru/Documents/Astronomie/Programme_Roue_Filtre/AlpycaDevice-master/AlpycaDevice-master/device/config.toml')    # Errors here are fatal.
+# _dict = toml.load(f'C:/Users/thbru/Documents/Astronomie/Programme_Roue_Filtre/AlpycaDevice-master/AlpycaDevice-master/device/config.toml')
+_dict = toml.load(config_file)
 _dict2 = {}
 try:
     # ltf - this file, if it exists can override or supplement definitions

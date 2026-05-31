@@ -1,39 +1,518 @@
-2026-03-29T15:13:49.574 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
-2026-03-29T15:14:05.057 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/connected
-2026-03-29T15:14:05.057 INFO 192.168.1.77 -> {'Connected': 'True', 'ClientID': '58729', 'ClientTransactionID': '3'}
-2026-03-29T15:14:08.275 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/connected?ClientID=58729&ClientTransactionID=4
-2026-03-29T15:14:08.276 INFO 192.168.1.77 <- True
-2026-03-29T15:14:08.288 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/names?ClientID=58729&ClientTransactionID=5
-2026-03-29T15:14:08.289 INFO 192.168.1.77 <- ['Luminance', 'Red', 'Green', 'Blue', 'None', 'None', 'None', 'Test4']
-2026-03-29T15:14:08.292 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/description?ClientID=58729&ClientTransactionID=6
-2026-03-29T15:14:08.293 INFO 192.168.1.77 <- Thibault ASCOM Filterwheel
-2026-03-29T15:14:08.294 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverinfo?ClientID=58729&ClientTransactionID=7
-2026-03-29T15:14:08.295 INFO 192.168.1.77 <- Alpaca Sample Device
-Implements IFilterwheel
+2026-05-31T11:58:09.458 INFO ==STARTUP== Serving on :5555. Time stamps are UTC.
+2026-05-31T11:59:26.147 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60388)
+2026-05-31T11:59:26.149 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60387)
+2026-05-31T11:59:26.154 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60389)
+2026-05-31T11:59:26.158 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60390)
+2026-05-31T11:59:26.691 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60391)
+2026-05-31T11:59:26.691 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60392)
+2026-05-31T11:59:26.702 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60393)
+2026-05-31T11:59:26.703 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60394)
+2026-05-31T11:59:26.715 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60395)
+2026-05-31T11:59:26.716 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60396)
+2026-05-31T11:59:27.056 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60397)
+2026-05-31T11:59:27.056 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60398)
+2026-05-31T11:59:27.067 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60399)
+2026-05-31T11:59:27.068 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60400)
+2026-05-31T11:59:27.075 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60401)
+2026-05-31T11:59:27.076 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60402)
+2026-05-31T11:59:27.129 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.161 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.162 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.166 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.167 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.168 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.218 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60403)
+2026-05-31T11:59:27.218 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60404)
+2026-05-31T11:59:27.241 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.242 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.248 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.250 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.254 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.258 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.267 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.275 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.282 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.288 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.289 INFO Disc rcv alpacadiscovery1 from ('192.168.1.120', 60405)
+2026-05-31T11:59:27.290 INFO Disc rcv alpacadiscovery1 from ('127.0.0.1', 60406)
+2026-05-31T11:59:27.294 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.296 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.298 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.300 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.303 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.306 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.310 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.312 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.626 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.627 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.629 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.630 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.632 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.634 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.636 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.638 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.639 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.641 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.643 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.645 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.646 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.648 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.650 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.651 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.653 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.654 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.656 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.657 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.750 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:27.751 INFO 192.168.1.120 <- [1]
+2026-05-31T11:59:27.753 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.755 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:27.756 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:27.758 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:28.140 INFO 127.0.0.1 <- [1]
+2026-05-31T11:59:28.141 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:28.142 INFO 192.168.1.120 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:28.146 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:28.148 INFO 192.168.1.120 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T11:59:28.149 INFO 127.0.0.1 <- {'ServerName': 'Alpaca Sample Rotator ', 'Manufacturer': 'ASCOM Initiative', 'Version': '0.2', 'Location': 'Anywhere on Earth'}
+2026-05-31T11:59:28.151 INFO 127.0.0.1 <- [{'DeviceName': 'Thibault Filterwheel', 'DeviceType': 'Filterwheel', 'DeviceNumber': 0, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}, {'DeviceName': 'Thibault Focuser', 'DeviceType': 'Focuser', 'DeviceNumber': 1, 'UniqueID': '##GENERATE A NEW GUID AND PASTE HERE##'}]
+2026-05-31T12:04:58.773 INFO 192.168.1.120 -> PUT /api/v1/filterwheel/0/connected
+2026-05-31T12:04:58.774 INFO 192.168.1.120 -> {'Connected': 'True', 'ClientID': '21129', 'ClientTransactionID': '1'}
+2026-05-31T12:04:58.783 ERROR DriverException: Filterwheel.Connected failed
+Traceback (most recent call last):
+  File "C:\Users\Thibault\Documents\Astronomie\Programmes\FilterWheel-Focusser\filterwheel.py", line 115, in on_put
+    fw.connect()
+    ~~~~~~~~~~^^
+  File "C:\Users\Thibault\Documents\Astronomie\Programmes\FilterWheel-Focusser\filterwheel_device.py", line 63, in connect
+    raise Exception("Impossible de se connecter à la roue")
+Exception: Impossible de se connecter à la roue
+
+2026-05-31T12:04:58.860 INFO 192.168.1.120 -> PUT /api/v1/filterwheel/0/connected
+2026-05-31T12:04:58.860 INFO 192.168.1.120 -> {'Connected': 'False', 'ClientID': '21129', 'ClientTransactionID': '2'}
+2026-05-31T12:05:27.931 INFO 192.168.1.120 -> PUT /api/v1/filterwheel/0/connected
+2026-05-31T12:05:27.931 INFO 192.168.1.120 -> {'Connected': 'True', 'ClientID': '63420', 'ClientTransactionID': '3'}
+2026-05-31T12:05:27.933 ERROR DriverException: Filterwheel.Connected failed
+Traceback (most recent call last):
+  File "C:\Users\Thibault\Documents\Astronomie\Programmes\FilterWheel-Focusser\filterwheel.py", line 115, in on_put
+    fw.connect()
+    ~~~~~~~~~~^^
+  File "C:\Users\Thibault\Documents\Astronomie\Programmes\FilterWheel-Focusser\filterwheel_device.py", line 63, in connect
+    raise Exception("Impossible de se connecter à la roue")
+Exception: Impossible de se connecter à la roue
+
+2026-05-31T12:05:27.947 INFO 192.168.1.120 -> PUT /api/v1/filterwheel/0/connected
+2026-05-31T12:05:27.947 INFO 192.168.1.120 -> {'Connected': 'False', 'ClientID': '63420', 'ClientTransactionID': '4'}
+2026-05-31T12:05:30.876 INFO 192.168.1.120 -> PUT /api/v1/focuser/1/connected
+2026-05-31T12:05:30.877 INFO 192.168.1.120 -> {'Connected': 'True', 'ClientID': '25791', 'ClientTransactionID': '5'}
+2026-05-31T12:05:33.916 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=6
+2026-05-31T12:05:33.916 INFO 192.168.1.120 <- True
+2026-05-31T12:05:33.948 INFO 192.168.1.120 -> GET /api/v1/focuser/1/interfaceversion?ClientID=25791&ClientTransactionID=7
+2026-05-31T12:05:33.948 INFO 192.168.1.120 <- 0
+2026-05-31T12:05:33.974 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxstep?ClientID=25791&ClientTransactionID=8
+2026-05-31T12:05:33.974 INFO 192.168.1.120 <- 10000
+2026-05-31T12:05:33.978 INFO 192.168.1.120 -> GET /api/v1/focuser/1/absolute?ClientID=25791&ClientTransactionID=9
+2026-05-31T12:05:33.978 INFO 192.168.1.120 <- True
+2026-05-31T12:05:33.982 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=10
+2026-05-31T12:05:33.982 INFO 192.168.1.120 <- False
+2026-05-31T12:05:33.986 INFO 192.168.1.120 -> GET /api/v1/focuser/1/description?ClientID=25791&ClientTransactionID=11
+2026-05-31T12:05:33.986 INFO 192.168.1.120 <- Thibault ASCOM Focuser
+2026-05-31T12:05:33.989 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=12
+2026-05-31T12:05:33.989 INFO 192.168.1.120 <- 5000
+2026-05-31T12:05:33.996 INFO 192.168.1.120 -> GET /api/v1/focuser/1/driverinfo?ClientID=25791&ClientTransactionID=13
+2026-05-31T12:05:33.997 INFO 192.168.1.120 <- Alpaca Sample Device
+Implements IFocuser
 ASCOM Initiative
-2026-03-29T15:14:08.297 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/description?ClientID=58729&ClientTransactionID=8
-2026-03-29T15:14:08.297 INFO 192.168.1.77 <- Thibault ASCOM Filterwheel
-2026-03-29T15:14:08.298 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverversion?ClientID=58729&ClientTransactionID=9
-2026-03-29T15:14:08.298 INFO 192.168.1.77 <- ##DRIVER VERSION AS STRING##
-2026-03-29T15:14:08.299 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverinfo?ClientID=58729&ClientTransactionID=10
-2026-03-29T15:14:08.299 INFO 192.168.1.77 <- Alpaca Sample Device
-Implements IFilterwheel
+2026-05-31T12:05:34.001 INFO 192.168.1.120 -> GET /api/v1/focuser/1/driverversion?ClientID=25791&ClientTransactionID=14
+2026-05-31T12:05:34.001 INFO 192.168.1.120 <- ##DRIVER VERSION AS STRING##
+2026-05-31T12:05:34.010 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxincrement?ClientID=25791&ClientTransactionID=15
+2026-05-31T12:05:34.010 INFO 192.168.1.120 <- 200
+2026-05-31T12:05:34.013 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxstep?ClientID=25791&ClientTransactionID=16
+2026-05-31T12:05:34.013 INFO 192.168.1.120 <- 10000
+2026-05-31T12:05:34.016 INFO 192.168.1.120 -> GET /api/v1/focuser/1/stepsize?ClientID=25791&ClientTransactionID=17
+2026-05-31T12:05:34.016 INFO 192.168.1.120 <- 15
+2026-05-31T12:05:34.021 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=18
+2026-05-31T12:05:34.021 INFO 192.168.1.120 <- False
+2026-05-31T12:05:34.026 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=19
+2026-05-31T12:05:34.026 INFO 192.168.1.120 <- False
+2026-05-31T12:05:34.244 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=20
+2026-05-31T12:05:34.244 INFO 192.168.1.120 <- False
+2026-05-31T12:05:34.450 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=21
+2026-05-31T12:05:34.450 INFO 192.168.1.120 <- False
+2026-05-31T12:05:34.456 INFO 192.168.1.120 -> GET /api/v1/focuser/1/supportedactions?ClientID=25791&ClientTransactionID=22
+2026-05-31T12:05:34.456 INFO 192.168.1.120 <- []
+2026-05-31T12:05:34.462 INFO 192.168.1.120 -> GET /api/v1/focuser/1/description?ClientID=25791&ClientTransactionID=23
+2026-05-31T12:05:34.462 INFO 192.168.1.120 <- Thibault ASCOM Focuser
+2026-05-31T12:05:34.465 INFO 192.168.1.120 -> GET /api/v1/focuser/1/driverinfo?ClientID=25791&ClientTransactionID=24
+2026-05-31T12:05:34.465 INFO 192.168.1.120 <- Alpaca Sample Device
+Implements IFocuser
 ASCOM Initiative
-2026-03-29T15:14:08.300 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/supportedactions?ClientID=58729&ClientTransactionID=11
-2026-03-29T15:14:08.301 INFO 192.168.1.77 <- []
-2026-03-29T15:14:08.301 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverversion?ClientID=58729&ClientTransactionID=12
-2026-03-29T15:14:08.302 INFO 192.168.1.77 <- ##DRIVER VERSION AS STRING##
-2026-03-29T15:14:08.313 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=58729&ClientTransactionID=13
-2026-03-29T15:14:08.314 INFO 192.168.1.77 <- 0
-2026-03-29T15:14:08.317 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/driverversion?ClientID=58729&ClientTransactionID=14
-2026-03-29T15:14:08.317 INFO 192.168.1.77 <- ##DRIVER VERSION AS STRING##
-2026-03-29T15:14:11.065 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/connected?ClientID=58729&ClientTransactionID=15
-2026-03-29T15:14:11.067 INFO 192.168.1.77 <- True
-2026-03-29T15:14:11.071 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=58729&ClientTransactionID=16
-2026-03-29T15:14:11.071 INFO 192.168.1.77 <- 0
-2026-03-29T15:14:11.074 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/position
-2026-03-29T15:14:11.074 INFO 192.168.1.77 -> {'Position': '1', 'ClientID': '58729', 'ClientTransactionID': '17'}
-2026-03-29T15:14:12.604 INFO 192.168.1.77 -> GET /api/v1/filterwheel/0/position?ClientID=58729&ClientTransactionID=18
-2026-03-29T15:14:12.604 INFO 192.168.1.77 <- 1
-2026-03-29T15:14:16.434 INFO 192.168.1.77 -> PUT /api/v1/filterwheel/0/connected
-2026-03-29T15:14:16.434 INFO 192.168.1.77 -> {'Connected': 'False', 'ClientID': '58729', 'ClientTransactionID': '19'}
+2026-05-31T12:05:34.470 INFO 192.168.1.120 -> GET /api/v1/focuser/1/driverversion?ClientID=25791&ClientTransactionID=25
+2026-05-31T12:05:34.470 INFO 192.168.1.120 <- ##DRIVER VERSION AS STRING##
+2026-05-31T12:05:34.475 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=26
+2026-05-31T12:05:34.475 INFO 192.168.1.120 <- 5000
+2026-05-31T12:05:34.479 INFO 192.168.1.120 -> GET /api/v1/focuser/1/driverversion?ClientID=25791&ClientTransactionID=27
+2026-05-31T12:05:34.479 INFO 192.168.1.120 <- ##DRIVER VERSION AS STRING##
+2026-05-31T12:05:36.482 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=28
+2026-05-31T12:05:36.483 INFO 192.168.1.120 <- True
+2026-05-31T12:05:36.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=29
+2026-05-31T12:05:36.488 INFO 192.168.1.120 <- 5000
+2026-05-31T12:05:36.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=30
+2026-05-31T12:05:36.491 INFO 192.168.1.120 <- False
+2026-05-31T12:05:36.591 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxstep?ClientID=25791&ClientTransactionID=31
+2026-05-31T12:05:36.592 INFO 192.168.1.120 <- 10000
+2026-05-31T12:05:36.597 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=32
+2026-05-31T12:05:36.597 INFO 192.168.1.120 <- False
+2026-05-31T12:05:36.599 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=33
+2026-05-31T12:05:36.599 INFO 192.168.1.120 <- 5000
+2026-05-31T12:05:36.615 INFO 192.168.1.120 -> PUT /api/v1/focuser/1/move
+2026-05-31T12:05:36.615 INFO 192.168.1.120 -> {'Position': '5002', 'ClientID': '25791', 'ClientTransactionID': '34'}
+2026-05-31T12:05:36.900 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=35
+2026-05-31T12:05:36.900 INFO 192.168.1.120 <- False
+2026-05-31T12:05:36.902 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=36
+2026-05-31T12:05:36.903 INFO 192.168.1.120 <- False
+2026-05-31T12:05:36.906 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=37
+2026-05-31T12:05:36.906 INFO 192.168.1.120 <- 5002
+2026-05-31T12:05:36.908 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=38
+2026-05-31T12:05:36.908 INFO 192.168.1.120 <- 5002
+2026-05-31T12:05:37.117 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=39
+2026-05-31T12:05:37.118 INFO 192.168.1.120 <- False
+2026-05-31T12:05:37.122 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=40
+2026-05-31T12:05:37.122 INFO 192.168.1.120 <- False
+2026-05-31T12:05:37.125 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=41
+2026-05-31T12:05:37.125 INFO 192.168.1.120 <- False
+2026-05-31T12:05:38.479 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=42
+2026-05-31T12:05:38.480 INFO 192.168.1.120 <- True
+2026-05-31T12:05:38.482 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=43
+2026-05-31T12:05:38.482 INFO 192.168.1.120 <- 5002
+2026-05-31T12:05:38.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=44
+2026-05-31T12:05:38.485 INFO 192.168.1.120 <- False
+2026-05-31T12:05:38.700 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=45
+2026-05-31T12:05:38.701 INFO 192.168.1.120 <- False
+2026-05-31T12:05:38.918 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=46
+2026-05-31T12:05:38.918 INFO 192.168.1.120 <- False
+2026-05-31T12:05:38.923 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=47
+2026-05-31T12:05:38.923 INFO 192.168.1.120 <- False
+2026-05-31T12:05:38.925 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=48
+2026-05-31T12:05:38.925 INFO 192.168.1.120 <- False
+2026-05-31T12:05:40.394 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=49
+2026-05-31T12:05:40.394 INFO 192.168.1.120 <- 5002
+2026-05-31T12:05:40.401 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxstep?ClientID=25791&ClientTransactionID=50
+2026-05-31T12:05:40.401 INFO 192.168.1.120 <- 10000
+2026-05-31T12:05:40.405 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=51
+2026-05-31T12:05:40.406 INFO 192.168.1.120 <- False
+2026-05-31T12:05:40.410 INFO 192.168.1.120 -> PUT /api/v1/focuser/1/move
+2026-05-31T12:05:40.411 INFO 192.168.1.120 -> {'Position': '5004', 'ClientID': '25791', 'ClientTransactionID': '52'}
+2026-05-31T12:05:40.696 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=53
+2026-05-31T12:05:40.696 INFO 192.168.1.120 <- True
+2026-05-31T12:05:40.699 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=55
+2026-05-31T12:05:40.699 INFO 192.168.1.120 <- 5004
+2026-05-31T12:05:40.701 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=56
+2026-05-31T12:05:40.701 INFO 192.168.1.120 <- False
+2026-05-31T12:05:40.704 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=57
+2026-05-31T12:05:40.705 INFO 192.168.1.120 <- False
+2026-05-31T12:05:40.707 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=58
+2026-05-31T12:05:40.707 INFO 192.168.1.120 <- False
+2026-05-31T12:05:42.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=59
+2026-05-31T12:05:42.491 INFO 192.168.1.120 <- True
+2026-05-31T12:05:42.497 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=60
+2026-05-31T12:05:42.497 INFO 192.168.1.120 <- 5004
+2026-05-31T12:05:42.500 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=61
+2026-05-31T12:05:42.500 INFO 192.168.1.120 <- False
+2026-05-31T12:05:42.503 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=62
+2026-05-31T12:05:42.503 INFO 192.168.1.120 <- False
+2026-05-31T12:05:42.505 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=63
+2026-05-31T12:05:42.506 INFO 192.168.1.120 <- False
+2026-05-31T12:05:43.519 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=64
+2026-05-31T12:05:43.519 INFO 192.168.1.120 <- 5004
+2026-05-31T12:05:43.525 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxstep?ClientID=25791&ClientTransactionID=65
+2026-05-31T12:05:43.526 INFO 192.168.1.120 <- 10000
+2026-05-31T12:05:43.529 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=66
+2026-05-31T12:05:43.530 INFO 192.168.1.120 <- False
+2026-05-31T12:05:43.534 INFO 192.168.1.120 -> PUT /api/v1/focuser/1/move
+2026-05-31T12:05:43.534 INFO 192.168.1.120 -> {'Position': '5006', 'ClientID': '25791', 'ClientTransactionID': '67'}
+2026-05-31T12:05:43.823 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=68
+2026-05-31T12:05:43.823 INFO 192.168.1.120 <- False
+2026-05-31T12:05:43.825 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=69
+2026-05-31T12:05:43.826 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:43.828 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=70
+2026-05-31T12:05:43.828 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:44.492 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=71
+2026-05-31T12:05:44.492 INFO 192.168.1.120 <- True
+2026-05-31T12:05:44.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=72
+2026-05-31T12:05:44.495 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:44.497 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=73
+2026-05-31T12:05:44.497 INFO 192.168.1.120 <- False
+2026-05-31T12:05:44.506 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=74
+2026-05-31T12:05:44.506 INFO 192.168.1.120 <- False
+2026-05-31T12:05:44.510 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=75
+2026-05-31T12:05:44.510 INFO 192.168.1.120 <- False
+2026-05-31T12:05:46.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=76
+2026-05-31T12:05:46.491 INFO 192.168.1.120 <- True
+2026-05-31T12:05:46.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=77
+2026-05-31T12:05:46.493 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:46.498 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=78
+2026-05-31T12:05:46.498 INFO 192.168.1.120 <- False
+2026-05-31T12:05:46.501 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=79
+2026-05-31T12:05:46.501 INFO 192.168.1.120 <- False
+2026-05-31T12:05:46.503 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=80
+2026-05-31T12:05:46.503 INFO 192.168.1.120 <- False
+2026-05-31T12:05:48.490 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=81
+2026-05-31T12:05:48.490 INFO 192.168.1.120 <- True
+2026-05-31T12:05:48.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=82
+2026-05-31T12:05:48.496 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:48.500 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=83
+2026-05-31T12:05:48.500 INFO 192.168.1.120 <- False
+2026-05-31T12:05:48.503 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=84
+2026-05-31T12:05:48.503 INFO 192.168.1.120 <- False
+2026-05-31T12:05:48.505 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=85
+2026-05-31T12:05:48.506 INFO 192.168.1.120 <- False
+2026-05-31T12:05:50.487 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=86
+2026-05-31T12:05:50.487 INFO 192.168.1.120 <- True
+2026-05-31T12:05:50.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=87
+2026-05-31T12:05:50.493 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:50.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=88
+2026-05-31T12:05:50.496 INFO 192.168.1.120 <- False
+2026-05-31T12:05:50.502 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=89
+2026-05-31T12:05:50.503 INFO 192.168.1.120 <- False
+2026-05-31T12:05:50.504 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=90
+2026-05-31T12:05:50.505 INFO 192.168.1.120 <- False
+2026-05-31T12:05:52.490 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=91
+2026-05-31T12:05:52.490 INFO 192.168.1.120 <- True
+2026-05-31T12:05:52.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=92
+2026-05-31T12:05:52.493 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:52.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=93
+2026-05-31T12:05:52.495 INFO 192.168.1.120 <- False
+2026-05-31T12:05:52.498 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=94
+2026-05-31T12:05:52.499 INFO 192.168.1.120 <- False
+2026-05-31T12:05:52.501 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=95
+2026-05-31T12:05:52.501 INFO 192.168.1.120 <- False
+2026-05-31T12:05:54.477 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=96
+2026-05-31T12:05:54.478 INFO 192.168.1.120 <- True
+2026-05-31T12:05:54.481 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=97
+2026-05-31T12:05:54.481 INFO 192.168.1.120 <- 5006
+2026-05-31T12:05:54.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=98
+2026-05-31T12:05:54.484 INFO 192.168.1.120 <- False
+2026-05-31T12:05:54.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=99
+2026-05-31T12:05:54.486 INFO 192.168.1.120 <- False
+2026-05-31T12:05:54.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=100
+2026-05-31T12:05:54.488 INFO 192.168.1.120 <- False
+2026-05-31T12:05:54.561 INFO 192.168.1.120 -> GET /api/v1/focuser/1/maxstep?ClientID=25791&ClientTransactionID=101
+2026-05-31T12:05:54.561 INFO 192.168.1.120 <- 10000
+2026-05-31T12:05:54.564 INFO 192.168.1.120 -> PUT /api/v1/focuser/1/move
+2026-05-31T12:05:54.564 INFO 192.168.1.120 -> {'Position': '5100', 'ClientID': '25791', 'ClientTransactionID': '102'}
+2026-05-31T12:05:56.358 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=103
+2026-05-31T12:05:56.358 INFO 192.168.1.120 <- False
+2026-05-31T12:05:56.360 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=104
+2026-05-31T12:05:56.360 INFO 192.168.1.120 <- 5100
+2026-05-31T12:05:56.362 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=105
+2026-05-31T12:05:56.363 INFO 192.168.1.120 <- 5100
+2026-05-31T12:05:56.481 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=106
+2026-05-31T12:05:56.481 INFO 192.168.1.120 <- True
+2026-05-31T12:05:56.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=107
+2026-05-31T12:05:56.483 INFO 192.168.1.120 <- 5100
+2026-05-31T12:05:56.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=108
+2026-05-31T12:05:56.486 INFO 192.168.1.120 <- False
+2026-05-31T12:05:56.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=109
+2026-05-31T12:05:56.489 INFO 192.168.1.120 <- False
+2026-05-31T12:05:56.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=110
+2026-05-31T12:05:56.491 INFO 192.168.1.120 <- False
+2026-05-31T12:05:58.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=111
+2026-05-31T12:05:58.484 INFO 192.168.1.120 <- True
+2026-05-31T12:05:58.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=112
+2026-05-31T12:05:58.486 INFO 192.168.1.120 <- 5100
+2026-05-31T12:05:58.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=113
+2026-05-31T12:05:58.489 INFO 192.168.1.120 <- False
+2026-05-31T12:05:58.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=114
+2026-05-31T12:05:58.492 INFO 192.168.1.120 <- False
+2026-05-31T12:05:58.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=115
+2026-05-31T12:05:58.493 INFO 192.168.1.120 <- False
+2026-05-31T12:06:00.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=116
+2026-05-31T12:06:00.491 INFO 192.168.1.120 <- True
+2026-05-31T12:06:00.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=117
+2026-05-31T12:06:00.493 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:00.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=118
+2026-05-31T12:06:00.495 INFO 192.168.1.120 <- False
+2026-05-31T12:06:00.502 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=119
+2026-05-31T12:06:00.502 INFO 192.168.1.120 <- False
+2026-05-31T12:06:00.504 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=120
+2026-05-31T12:06:00.504 INFO 192.168.1.120 <- False
+2026-05-31T12:06:02.479 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=121
+2026-05-31T12:06:02.479 INFO 192.168.1.120 <- True
+2026-05-31T12:06:02.481 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=122
+2026-05-31T12:06:02.481 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:02.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=123
+2026-05-31T12:06:02.483 INFO 192.168.1.120 <- False
+2026-05-31T12:06:02.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=124
+2026-05-31T12:06:02.486 INFO 192.168.1.120 <- False
+2026-05-31T12:06:02.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=125
+2026-05-31T12:06:02.488 INFO 192.168.1.120 <- False
+2026-05-31T12:06:04.484 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=126
+2026-05-31T12:06:04.484 INFO 192.168.1.120 <- True
+2026-05-31T12:06:04.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=127
+2026-05-31T12:06:04.486 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:04.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=128
+2026-05-31T12:06:04.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:04.492 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=129
+2026-05-31T12:06:04.492 INFO 192.168.1.120 <- False
+2026-05-31T12:06:04.494 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=130
+2026-05-31T12:06:04.494 INFO 192.168.1.120 <- False
+2026-05-31T12:06:06.480 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=131
+2026-05-31T12:06:06.481 INFO 192.168.1.120 <- True
+2026-05-31T12:06:06.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=132
+2026-05-31T12:06:06.483 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:06.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=133
+2026-05-31T12:06:06.485 INFO 192.168.1.120 <- False
+2026-05-31T12:06:06.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=134
+2026-05-31T12:06:06.488 INFO 192.168.1.120 <- False
+2026-05-31T12:06:06.490 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=135
+2026-05-31T12:06:06.490 INFO 192.168.1.120 <- False
+2026-05-31T12:06:08.477 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=136
+2026-05-31T12:06:08.478 INFO 192.168.1.120 <- True
+2026-05-31T12:06:08.480 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=137
+2026-05-31T12:06:08.480 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:08.482 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=138
+2026-05-31T12:06:08.482 INFO 192.168.1.120 <- False
+2026-05-31T12:06:08.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=139
+2026-05-31T12:06:08.486 INFO 192.168.1.120 <- False
+2026-05-31T12:06:08.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=140
+2026-05-31T12:06:08.488 INFO 192.168.1.120 <- False
+2026-05-31T12:06:10.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=141
+2026-05-31T12:06:10.489 INFO 192.168.1.120 <- True
+2026-05-31T12:06:10.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=142
+2026-05-31T12:06:10.491 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:10.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=143
+2026-05-31T12:06:10.494 INFO 192.168.1.120 <- False
+2026-05-31T12:06:10.498 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=144
+2026-05-31T12:06:10.498 INFO 192.168.1.120 <- False
+2026-05-31T12:06:10.502 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=145
+2026-05-31T12:06:10.502 INFO 192.168.1.120 <- False
+2026-05-31T12:06:12.478 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=146
+2026-05-31T12:06:12.479 INFO 192.168.1.120 <- True
+2026-05-31T12:06:12.481 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=147
+2026-05-31T12:06:12.481 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:12.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=148
+2026-05-31T12:06:12.483 INFO 192.168.1.120 <- False
+2026-05-31T12:06:12.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=149
+2026-05-31T12:06:12.486 INFO 192.168.1.120 <- False
+2026-05-31T12:06:12.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=150
+2026-05-31T12:06:12.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:14.484 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=151
+2026-05-31T12:06:14.485 INFO 192.168.1.120 <- True
+2026-05-31T12:06:14.487 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=152
+2026-05-31T12:06:14.487 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:14.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=153
+2026-05-31T12:06:14.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:14.492 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=154
+2026-05-31T12:06:14.493 INFO 192.168.1.120 <- False
+2026-05-31T12:06:14.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=155
+2026-05-31T12:06:14.495 INFO 192.168.1.120 <- False
+2026-05-31T12:06:16.477 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=156
+2026-05-31T12:06:16.477 INFO 192.168.1.120 <- True
+2026-05-31T12:06:16.480 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=157
+2026-05-31T12:06:16.480 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:16.482 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=158
+2026-05-31T12:06:16.483 INFO 192.168.1.120 <- False
+2026-05-31T12:06:16.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=159
+2026-05-31T12:06:16.486 INFO 192.168.1.120 <- False
+2026-05-31T12:06:16.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=160
+2026-05-31T12:06:16.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:18.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=161
+2026-05-31T12:06:18.489 INFO 192.168.1.120 <- True
+2026-05-31T12:06:18.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=162
+2026-05-31T12:06:18.491 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:18.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=163
+2026-05-31T12:06:18.493 INFO 192.168.1.120 <- False
+2026-05-31T12:06:18.496 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=164
+2026-05-31T12:06:18.496 INFO 192.168.1.120 <- False
+2026-05-31T12:06:18.498 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=165
+2026-05-31T12:06:18.498 INFO 192.168.1.120 <- False
+2026-05-31T12:06:20.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=166
+2026-05-31T12:06:20.489 INFO 192.168.1.120 <- True
+2026-05-31T12:06:20.492 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=167
+2026-05-31T12:06:20.492 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:20.494 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=168
+2026-05-31T12:06:20.495 INFO 192.168.1.120 <- False
+2026-05-31T12:06:20.498 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=169
+2026-05-31T12:06:20.498 INFO 192.168.1.120 <- False
+2026-05-31T12:06:20.500 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=170
+2026-05-31T12:06:20.500 INFO 192.168.1.120 <- False
+2026-05-31T12:06:22.478 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=171
+2026-05-31T12:06:22.479 INFO 192.168.1.120 <- True
+2026-05-31T12:06:22.481 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=172
+2026-05-31T12:06:22.481 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:22.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=173
+2026-05-31T12:06:22.486 INFO 192.168.1.120 <- False
+2026-05-31T12:06:22.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=174
+2026-05-31T12:06:22.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:22.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=175
+2026-05-31T12:06:22.491 INFO 192.168.1.120 <- False
+2026-05-31T12:06:24.492 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=176
+2026-05-31T12:06:24.492 INFO 192.168.1.120 <- True
+2026-05-31T12:06:24.494 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=177
+2026-05-31T12:06:24.495 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:24.497 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=178
+2026-05-31T12:06:24.497 INFO 192.168.1.120 <- False
+2026-05-31T12:06:24.500 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=179
+2026-05-31T12:06:24.501 INFO 192.168.1.120 <- False
+2026-05-31T12:06:24.502 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=180
+2026-05-31T12:06:24.502 INFO 192.168.1.120 <- False
+2026-05-31T12:06:26.478 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=181
+2026-05-31T12:06:26.479 INFO 192.168.1.120 <- True
+2026-05-31T12:06:26.481 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=182
+2026-05-31T12:06:26.481 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:26.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=183
+2026-05-31T12:06:26.484 INFO 192.168.1.120 <- False
+2026-05-31T12:06:26.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=184
+2026-05-31T12:06:26.487 INFO 192.168.1.120 <- False
+2026-05-31T12:06:26.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=185
+2026-05-31T12:06:26.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:28.479 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=186
+2026-05-31T12:06:28.479 INFO 192.168.1.120 <- True
+2026-05-31T12:06:28.482 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=187
+2026-05-31T12:06:28.482 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:28.484 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=188
+2026-05-31T12:06:28.484 INFO 192.168.1.120 <- False
+2026-05-31T12:06:28.486 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=189
+2026-05-31T12:06:28.486 INFO 192.168.1.120 <- False
+2026-05-31T12:06:28.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=190
+2026-05-31T12:06:28.488 INFO 192.168.1.120 <- False
+2026-05-31T12:06:30.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=191
+2026-05-31T12:06:30.485 INFO 192.168.1.120 <- True
+2026-05-31T12:06:30.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=192
+2026-05-31T12:06:30.488 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:30.490 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=193
+2026-05-31T12:06:30.490 INFO 192.168.1.120 <- False
+2026-05-31T12:06:30.493 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=194
+2026-05-31T12:06:30.493 INFO 192.168.1.120 <- False
+2026-05-31T12:06:30.495 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=195
+2026-05-31T12:06:30.496 INFO 192.168.1.120 <- False
+2026-05-31T12:06:32.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=196
+2026-05-31T12:06:32.483 INFO 192.168.1.120 <- True
+2026-05-31T12:06:32.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=197
+2026-05-31T12:06:32.485 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:32.487 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=198
+2026-05-31T12:06:32.487 INFO 192.168.1.120 <- False
+2026-05-31T12:06:32.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=199
+2026-05-31T12:06:32.489 INFO 192.168.1.120 <- False
+2026-05-31T12:06:32.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=200
+2026-05-31T12:06:32.491 INFO 192.168.1.120 <- False
+2026-05-31T12:06:34.480 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=201
+2026-05-31T12:06:34.481 INFO 192.168.1.120 <- True
+2026-05-31T12:06:34.483 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=202
+2026-05-31T12:06:34.483 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:34.485 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=203
+2026-05-31T12:06:34.485 INFO 192.168.1.120 <- False
+2026-05-31T12:06:34.488 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=204
+2026-05-31T12:06:34.488 INFO 192.168.1.120 <- False
+2026-05-31T12:06:34.490 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=205
+2026-05-31T12:06:34.490 INFO 192.168.1.120 <- False
+2026-05-31T12:06:36.487 INFO 192.168.1.120 -> GET /api/v1/focuser/1/connected?ClientID=25791&ClientTransactionID=206
+2026-05-31T12:06:36.487 INFO 192.168.1.120 <- True
+2026-05-31T12:06:36.489 INFO 192.168.1.120 -> GET /api/v1/focuser/1/position?ClientID=25791&ClientTransactionID=207
+2026-05-31T12:06:36.489 INFO 192.168.1.120 <- 5100
+2026-05-31T12:06:36.491 INFO 192.168.1.120 -> GET /api/v1/focuser/1/temperature?ClientID=25791&ClientTransactionID=208
+2026-05-31T12:06:36.491 INFO 192.168.1.120 <- False
+2026-05-31T12:06:36.494 INFO 192.168.1.120 -> GET /api/v1/focuser/1/ismoving?ClientID=25791&ClientTransactionID=209
+2026-05-31T12:06:36.495 INFO 192.168.1.120 <- False
+2026-05-31T12:06:36.497 INFO 192.168.1.120 -> GET /api/v1/focuser/1/tempcompavailable?ClientID=25791&ClientTransactionID=210
+2026-05-31T12:06:36.497 INFO 192.168.1.120 <- False
