@@ -1,0 +1,19 @@
+# Ignorer les fichiers temporaires
+*.log
+*.tmp
+
+# Dossiers Python compilés
+__pycache__/
+
+# Dossier Spyder
+.spyproject/
+
+# Ignorer le dossier node_modules
+node_modules/
+
+# Ignorer les fichiers de configuration locaux
+.env
+
+# Ignorer les fichiers Alpyca
+alpyca.log
+alpyca.log.*
