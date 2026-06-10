@@ -1,6 +1,6 @@
 {
-    "port_foc": "COM20",
-    "step_size": 10,
+    "port_foc": "COM14",
+    "step_size": 1,
     "port": "COM18",
     "baudrate": 9600,
     "num_positions": 8,
@@ -15,13 +15,13 @@
         "Test4"
     ],
     "filter_positions": [
-        218.0,
-        264.0,
-        309.0,
-        39.0,
-        83.0,
-        128.0,
-        173.0
+        280.0,
+        324.0,
+        369.0,
+        54.0,
+        100.0,
+        149.0,
+        235.0
     ],
     "focus_offsets": [
         0,

@@ -150,4 +150,8 @@ class Focuser:
         
         self.currentPosition = position
         self.moving = False
-            
+
+##########################
+if __name__ == "__main__":
+    foc = Focuser()
+    foc.connect()

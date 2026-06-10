@@ -151,3 +151,8 @@ class FilterWheel:
     
         self.currentPosition = position
         self.moving = False
+
+##########################
+if __name__ == "__main__":
+    fw = FilterWheel()
+    fw.connect()
